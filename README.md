@@ -1,6 +1,6 @@
 # Einführung in die Datenanalyse mit R
 
-Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten ist der Download über den Code-Button -\> Download ZIP. Der Workshop basiert auf dem R Einführungsskript [(zum direkten Download über die ULB)](https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=58006) [![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/) Please cite.
+Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten ist der Download über den Code-Button -\> Download ZIP. Der Workshop basiert auf dem R Einführungsskript [(zum direkten Download über die ULB)](https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=58006).
 
 
 # Seminarplan
@@ -41,3 +41,10 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 | 15:00 - 15:30 | **Pause**                          |
 | 15:30 - 17:00 | **Q&A**           |
 
+## Materialien zum Kurs
+
+# Installation
+
+[0.1 Installation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/0.1_installation.pdf)
+
+[![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/).
