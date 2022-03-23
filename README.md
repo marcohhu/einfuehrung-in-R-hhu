@@ -41,10 +41,19 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 | 15:00 - 15:30 | **Pause**                          |
 | 15:30 - 17:00 | **Q&A**           |
 
-## Materialien zum Kurs
+# Materialien zum Kurs
 
-# Installation
+## Installation
 
 [0.1 Installation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/0.1_installation.pdf)
+
+## Tag 1
+
+### Einführung in R und RStudio
+
+
+
+### Objekte, Klassen & Datenimport
+
 
 [![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/).
