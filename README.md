@@ -43,9 +43,11 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 # Materialien zum Kurs
 
-## Installation
+## Installation und Ressourcen
 
 [0.1 Installation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/0.1_installation.pdf)
+
+[Ressourcensammlung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Ressourcen/ressourcen.pdf)
 
 ## Tag 1
 

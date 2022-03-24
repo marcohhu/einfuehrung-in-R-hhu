@@ -39,6 +39,7 @@ vignettes/*.pdf
 .Renviron
 
 #latex
-.log
-.gz
+.ressourcen.log
+.ressourcen.synctex.gz
+.ressourcen.tex
 .tex
