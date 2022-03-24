@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan
+    }
+
+\urlstyle{same}
+
+\title{Einführung in die Datenanalyse mit R: Ressourcensammlung}
+\author{Marco Wähner}
+\date{\today}
+
+\begin{document}
+\maketitle
+\SweaveOpts{concordance=TRUE}
+
+\section{Ressourcen}
+\subsection{Zur Einführung - Online}
+\begin{itemize}
+  \item Hadley Wickham: \href{https://r4ds.had.co.nz/}{R for Data Science}
+  \item Garret Grolemund: \href{https://rstudio-education.github.io/hopr/}{Hands-On Programming with R}
+\end{itemize}
+
+\end{document}
