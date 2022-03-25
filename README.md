@@ -53,6 +53,8 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 ### Einführung in R und RStudio
 
+[Folien 1.1 Orga und Einführung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.1_orga_einfuehrung.pdf)
+
 [1.1 Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.1_hands-on-webshop.pdf)
 
 [1.1 Lösung: Hands-On](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
