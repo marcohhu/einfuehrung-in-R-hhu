@@ -1,0 +1,56 @@
+---
+title: '1.2 Hands-On: Customer'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Aufgabenstellung
+
+Fallbeispiel: Sie haben verschiedene Daten über die  Besucher*innen ihres Webshops erhoben. Erstellen Sie die Variablen, indem Sie den jeweiligen Code kopieren oder abschreiben und ausführen.
+
+```{r}
+#Alter
+age <- c(64, 23, 69, 70, 72, 27, 33, 36, 51, 74, 55, 61, 41, 41, 52)
+#1 binäre Geschlechtskodierung für männlich und 2 für weiblich
+sex <- c(1, 2, 1, 1, 2, 2, 1, 2, 2, 1, 1, 1, 2, 2, 1)
+#0 kein kauf und 1 kauf
+buy <- c(1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0) 
+```
+
+## Aufgabe 1
+Dummerweise sind die Daten über die Besucher*innen in seperaten Vektoren gespeichert. Bitte erstellen Sie einen Data Frame "customer" mit den drei Variablen age, sex und buy.
+
+## Aufgabe 2
+Wie viele Fälle hat der neue Datensatz?
+
+## Aufgabe 3
+Berechnen Sie das durchschnittliche Alter der Besucher*innen
+
+## Aufgabe 4
+Können Sie aus dem Alter (Variable age) das Geburtsjahr der Besucher*innen berechnen? 
+Zwei Hinweise: 
+1. Alle Daten wurden im Jahr 2020 erhoben. 
+2. Eine mathematische Operation übernimmt R für jedes Element in einem Vektor.
+
+
+
+## Aufgabe 5
+Sie haben ebenfalls die Zeit (in Minuten) erhoben, die Besucher*innen auf Ihrem Webshop verbringen.
+
+```{r}
+time <- c(24, 20,  NA, 20, 13,  9,  7,  5, 11,  NA, 11, 23, NA,  6, 3)
+```
+
+Die neue Variable müssen Sie ebenfalls dem Datensatz zuweisen, damit Sie den Datensatz nicht überschreiben, müssen Sie eine neue Variable hinzufügen.
+Überprüfen Sie zunächst, ob die Variable fehlende Werte hat. Wenn ja, wie viele? 
+
+## Aufgabe 6
+berechnen Sie die durchschnittliche Zeit, die Besucher*innen auf Ihrem Webshop verbringen. Wenn das Ergebnis "NA" kommt, dann gucken Sie sich die Hilfe zur entsprechenden Funktion an.
+
+
+
