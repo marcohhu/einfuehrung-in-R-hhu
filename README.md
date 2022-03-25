@@ -31,7 +31,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 ## Samstag, 9. April 2022
 
-| Zeit          | Topic                              |
+| Zeit          | Inhalt                             |
 |:--------------|:-----------------------------------|
 | 09:00 - 10:30 | **Datenvisualisierung II**    |
 | 10:30 - 10:45 | **Pause**                          |
@@ -53,8 +53,11 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 ### Einführung in R und RStudio
 
+[1.1 Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.1_hands-on-webshop.pdf)
 
+[1.1 Lösung: Hands-On](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
 
+[1.1 Praxis](https://github.com/marcohhu/einfuehrung-in-R-hhu/tree/main/praxis)
 ### Objekte, Klassen & Datenimport
 
 
