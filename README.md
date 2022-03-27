@@ -63,7 +63,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 ### 1.2 Objekte, Konventionen & Datenimport
 
-[Folien 1.2 Objekte, Konventionen und Import]
+[Folien 1.2 Objekte, Konventionen und Import](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.2_objekte_konventionen_import.pdf)
 
 [1.2 Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.2_hands-on-customer.pdf)
 
