@@ -1,0 +1,48 @@
+---
+title: '1.2 Hands-On: Wrangling'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung - Lösung
+
+## Aufgabe 1
+Import der GLES Vor- und Nachwahlbefragung 2021
+
+## Aufgabe 2
+Geben Sie die Variablennamen des Datensatzes aus.
+
+## Aufgabe 3
+Im Datensatz sind sowohl die Vorwahl- als auch die Nachwahl-Daten. In der Variable "sample" ist die jeweilige Befragung gespeichert. Geben Sie die Eigenschaften der Variable "sample" aus. 
+
+## Aufgabe 4
+Filtern Sie nun nach der Variable "sample" und speichern Sie die Befragten aus der Nachwahl-Befragung im neuen Dataframe "df_post" ab.
+
+## Aufgabe 5
+Nutzen Sie nur die Daten aus der Nachwahl-Befragung. Die Variable q68 enthält Angaben zur Internetnutzung der Befragten. Erstellen Sie eine neue Variable „online“ und klassifizieren Sie die Variable in folgende Kategorien:
+1. Seltener als 1 Tag die Woche
+2. 1 bis einschließlich 3 Tage die Woche
+3. 4 bis einschließlich 5 Tage die Woche
+4. 6 bis einschließlich 7 Tage die Woche
+Befragte die angeben, dass Sie nie das Internet nutzen (Wert 8) oder einen Internetzugang haben
+(Wert 9) werden als Missing Values definiert. Geben Sie die absolute Häufigkeit der neuen
+Variablen an. Wie viele Missing Values hat diese neue Variable?
+
+## Aufgabe 6
+Die Variable „q73b“ beinhaltet Informationen darüber, ob die Befragten in den vergangenen 12
+Monaten an einer Demonstration teilgenommen haben. Erstellen Sie eine Dummy-Variable mit dem Namen "demo_dummy", die den Wert „0“ annimmt, wenn die Befragten nicht an einer Demonstration teilgenommen haben und den Wert „1“ annimmt, wenn die Befragten an einer Demonstration teilgenommen haben.
+Wie hoch ist der Anteil der Befragten, die an einer Demo teilgenommen haben? Wie viele fehlende
+Werte hat die ursprüngliche Variable? 
+
+## Aufgabe 7
+Berechnen Sie aus dem Geburtsjahr (Variable d2a) das Alter der Befragten(zur Erinnerung: Die Erhebung wurde 2021 durchgeführt). Speichern Sie das Alter der Befragten als "age" im Datensatz zur Nachwahl-Befragung ab. Was ist das Problem mit der Klasse der ursprünglichen Variable d2a? Nutzen Sie ggf. die Funktion "as.numeric", um die Klasse der Variable zu ändern. 
+
+##Aufgabe 8
+Wählen Sie folgende Variablen aus dem Datensatz zur Nachbefragung aus: online, demo_dummy, age und q1. Diese Variablen sollen in einem neuen Datensatz gespeichert werden. Exportieren Sie den neuen Datensatz im .RDATA-Format mit den vier Variablen.
+
+

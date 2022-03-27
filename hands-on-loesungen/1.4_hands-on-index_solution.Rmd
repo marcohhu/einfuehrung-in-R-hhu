@@ -1,0 +1,56 @@
+---
+title: '1.4 Hands-On: Inglehart-Index'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung - Lösung
+
+## Aufgabe 1
+Importieren Sie die Daten aus dem Allbus 2018.
+
+```{r}
+library(rio)
+#import
+df <- import("data/allbus_2018_gesamt.sav")
+```
+
+
+## Aufgabe 2: Inglehart-Index erstellen
+Betrachten Sie die Variablen va01 bis va04.
+
+```{r}
+#vector erstellen
+ingle <- c("va01", "va02", "va03", "va04")
+
+lapply(df[, ingle], function(x) attr(x, "label"))
+lapply(df[, ingle], function(x) attr(x, "labels"))
+```
+
+
+Die Items werden in eine Reihenfolge gebracht und zu einem Materialismus/Post-Materialismus Index (in Anlehnung an Inglehart, 1971) zusammengefasst. Befragte, die sowohl "Aufrechterhaltung von Ruhe und Ordnung in diesem Lande" (va01) als auch "Kampf gegen steigende Preise" (va03) auf die ersten beiden Rangplätze in der Wichtigkeitseinstufung setzen, werden als "Materialisten" eingestuft.
+Befragte, welche dagegen "Mehr Einfluss der Bürger auf die Entscheidungen der Regierung" (va02) und "Schutz des Rechtes auf freie Meinungsäußerung" (va04) für die wichtigsten Ziele halten, werden als "Postmaterialisten" kategorisiert.
+Befragte, die ein "postmaterialistisches" (va02 oder va04) Item an erster Stelle und ein "materialistisches" Item an zweiter Stelle nennen, werden in die Kategorie "postmaterialistischer Mischtyp" eingruppiert; bei umgekehrter Prioritätenreihenfolge wird von einem "materialistischen Mischtyp" ausgegangen (also va01 oder va03 an erster Stelle)
+
+* Neue Variable „index“ erstellen mit der Klasse numeric
++ 1 = Postmaterialisten
++ 2 = Postmaterialistischer Mischtyp
++ 3 = Materialistischer Mischtyp
++ 4 = Materialisten
+
+```{r}
+df$index[df$va01 == 1 & df$va03 == 2 | df$va01 == 2 & df$va03 == 1] <- 4 #Materialisten
+df$index[df$va02 == 1 & df$va04 == 2 | df$va02 == 2 & df$va04 == 1] <- 1 #Postmaterialisten
+df$index[(df$va02 == 1 | df$va04 == 1) & (df$va01 == 2 | df$va03 ==2)] <- 2 #Mix Postmaterialisten
+df$index[(df$va01 == 1 | df$va03 == 1) & (df$va02 == 2 | df$va04 ==2)] <- 3 #Mix Materialisten
+
+table(df$ingle) #der Index ist im Allbus 2018 bereits vorkodiert
+table(df$index)
+```
+
+
