@@ -11,7 +11,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 |:--------------|:-----------------------------------|
 | 09:00 - 10:30 | **Einführung in R und RStudio**    |
 | 10:30 - 10:45 | **Pause**                          |
-| 10:45 - 12:15 | **Objekte, Klassen & Datenimport** |
+| 10:45 - 12:15 | **Objekte, Konventionen & Import** |
 | 12:15 - 13:30 | **Pause**                          |
 | 13:30 - 15:00 | **Datenaufbereitung I**            |
 | 15:00 - 15:30 | **Pause**                          |
@@ -51,16 +51,24 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 ## Tag 1
 
-### Einführung in R und RStudio
+### 1.1 Einführung in R und RStudio
 
 [Folien 1.1 Orga und Einführung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.1_orga_einfuehrung.pdf)
 
 [1.1 Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.1_hands-on-webshop.pdf)
 
-[1.1 Lösung: Hands-On](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
+[1.1 Lösung Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
 
 [1.1 Praxis](https://github.com/marcohhu/einfuehrung-in-R-hhu/tree/main/praxis)
-### Objekte, Klassen & Datenimport
 
+### 1.2 Objekte, Konventionen & Datenimport
+
+[Folien 1.2 Objekte, Konventionen und Import]
+
+[1.2 Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.2_hands-on-customer.pdf)
+
+[1.2 Lösung Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.2_hands-on-customer_solution.pdf)
+
+## Acknowledgement
 
 [![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/).
