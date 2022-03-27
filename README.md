@@ -69,6 +69,50 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [1.2 Lösung Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.2_hands-on-customer_solution.pdf)
 
+### 1.3 Datenaufbereitung I
+[Folien 1.3 Datenaufbereitung I]
+
+[1.3 Hands-On: Wrangling]
+
+[1.3 Lösung Hands-On:]
+
+### 1.4 Datenaufbereitung II
+[Folien 1.4 Datenaufbereitung I]
+
+[1.4 Hands-On: Inglehart-Index]
+
+[1.4 Lösung Hands-On: Inglehart-Index]
+
+## Tag 2
+
+### 2.1 Deskriptivstatistik I
+[Folien 2.1 Deskriptivstatistik I]
+
+[2.1 Hands-On: ]
+
+[1.4 Lösung Hands-On: ]
+
+### 2.2 Datenvisualisierung I
+[Folien 2.2 Datenvisualisierung I]
+
+[2.2 Hands-On: ]
+
+[2.2 Lösung Hands-On: ]
+
+### 2.3 Deskriptivstatistik II
+[Folien 2.3 Deskriptivstatistik II]
+
+[2.2 Hands-On: ]
+
+[2.2 Lösung Hands-On: ]
+
+### 2.4 Inferenzstatistik
+[Folien 2.4 Inferenzstatistik]
+
+[2.4 Hands-On: ]
+
+[2.4 Lösung Hands-On: ]
+
 ## Acknowledgement
 
 [![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/).
