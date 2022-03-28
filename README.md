@@ -74,14 +74,14 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [1.3 Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.3_hands-on-wrangling.pdf)
 
-[1.3 Lösung Hands-On:](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.3_hands-on-wrangling_solution.pdf)
+[1.3 Lösung Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.3_hands-on-wrangling_solution.pdf)
 
 ### 1.4 Datenaufbereitung II
-[Folien 1.4 Datenaufbereitung I]
+[Folien 1.4 Datenaufbereitung I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.4_datenaufbereitung_II.pdf)
 
-[1.4 Hands-On: Inglehart-Index]
+[1.4 Hands-On: Inglehart-Index](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.4_hands-on-index.pdf)
 
-[1.4 Lösung Hands-On: Inglehart-Index]
+[1.4 Lösung Hands-On: Inglehart-Index](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.4_hands-on-index_solution.pdf)
 
 ## Tag 2
 
