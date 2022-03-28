@@ -70,11 +70,11 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 [1.2 Lösung Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.2_hands-on-customer_solution.pdf)
 
 ### 1.3 Datenaufbereitung I
-[Folien 1.3 Datenaufbereitung I]
+[Folien 1.3 Datenaufbereitung I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.3_datenaufbereitung_I.pdf)
 
-[1.3 Hands-On: Wrangling]
+[1.3 Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.3_hands-on-wrangling.pdf)
 
-[1.3 Lösung Hands-On:]
+[1.3 Lösung Hands-On:](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.3_hands-on-wrangling_solution.pdf)
 
 ### 1.4 Datenaufbereitung II
 [Folien 1.4 Datenaufbereitung I]
