@@ -55,9 +55,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [Folien 1.1 Orga und Einführung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.1_orga_einfuehrung.pdf)
 
-[1.1 Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.1_hands-on-webshop.pdf)
-
-[1.1 Lösung Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
+[1.1 Hands-On: Webshop](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.1_hands-on-webshop.pdf) | [1.1 Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.1_hands-on-webshop_solution.pdf)
 
 [1.1 Praxis](https://github.com/marcohhu/einfuehrung-in-R-hhu/tree/main/praxis)
 
@@ -65,23 +63,17 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [Folien 1.2 Objekte, Konventionen und Import](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.2_objekte_konventionen_import.pdf)
 
-[1.2 Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.2_hands-on-customer.pdf)
-
-[1.2 Lösung Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.2_hands-on-customer_solution.pdf)
+[1.2 Hands-On: Customer](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.2_hands-on-customer.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.2_hands-on-customer_solution.pdf)
 
 ### 1.3 Datenaufbereitung I
 [Folien 1.3 Datenaufbereitung I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.3_datenaufbereitung_I.pdf)
 
-[1.3 Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.3_hands-on-wrangling.pdf)
-
-[1.3 Lösung Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.3_hands-on-wrangling_solution.pdf)
+[1.3 Hands-On: Wrangling](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.3_hands-on-wrangling.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.3_hands-on-wrangling_solution.pdf)
 
 ### 1.4 Datenaufbereitung II
 [Folien 1.4 Datenaufbereitung I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/1.4_datenaufbereitung_II.pdf)
 
-[1.4 Hands-On: Inglehart-Index](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.4_hands-on-index.pdf)
-
-[1.4 Lösung Hands-On: Inglehart-Index](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.4_hands-on-index_solution.pdf)
+[1.4 Hands-On: Inglehart-Index](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/1.4_hands-on-index.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/1.4_hands-on-index_solution.pdf)
 
 ## Tag 2
 
