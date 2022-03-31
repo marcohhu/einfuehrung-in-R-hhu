@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[a4paper,top=2cm,bottom=4cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -11,17 +12,51 @@
 
 \title{Einführung in die Datenanalyse mit R: Ressourcensammlung}
 \author{Marco Wähner}
-\date{\today}
+\date{Latest Update: \today}
 
 \begin{document}
 \maketitle
 \SweaveOpts{concordance=TRUE}
 
-\section{Ressourcen}
-\subsection{Zur Einführung - Online}
+\section*{Ressourcen}
+\subsection*{Zur Einführung - Online}
 \begin{itemize}
-  \item Hadley Wickham: \href{https://r4ds.had.co.nz/}{R for Data Science}
-  \item Garret Grolemund: \href{https://rstudio-education.github.io/hopr/}{Hands-On Programming with R}
+  \item Bryan, Jennifer und Hester, Jim: \href{https://rstats.wtf/index.html}{What they Forgot to Teach You About R}
+  \item Grolemund, Garret: \href{https://rstudio-education.github.io/hopr/}{Hands-On Programming with R}
+  \item Irizarry, Rafael A.: \href{https://rafalab.github.io/dsbook/}{Introduction to Data Science}
+  \item Long, James und Teetor, Paul: \href{https://rc2e.com/}{R Cookbook}
+  \item Peng, Roger D.: \href{https://bookdown.org/rdpeng/rprogdatascience/}{R Programming for Data Science}
+  \item Wickham, Hadley: \href{https://r4ds.had.co.nz/}{R for Data Science}
+\end{itemize}
+
+\subsection*{weitere online Ressourcen}
+\begin{itemize}
+  \item UCLA: \href{https://stats.oarc.ucla.edu/r/seminars/survey-data-analysis-with-r/}{Survey Data Analysis with R}
+\end{itemize}
+
+
+\subsection*{Einführung in ggplot2}
+\begin{itemize}
+  \item Bergstrom, Carl und West, Jevin: \href{https://www.callingbullshit.org/}{Survey Data Analysis with R}
+  \item Wickham, Hadley: \href{https://ggplot2-book.org/index.html}{ggplot2: Elegant Graphics for Data Analysis}
+  \item Winston, Chang: \href{http://www.cookbook-r.com/}{R Graphics Cookbook}
+\end{itemize}
+
+\subsection*{Einführung in die Textanalyse mit quanteda (u.a. Tutorials)}
+\begin{itemize}
+  \item Watanabe, Kohei und Müller, Stefan: \href{https://tutorials.quanteda.io/}{Quanteda Tutorials}
+\end{itemize}
+
+
+\subsection*{Packages (alphabetische Reihenfolge)}
+\begin{itemize}
+  \item ggplot2 - Datenimport
+  \item lavaan - Strukturgleichungsmodelle
+  \item quanteda - Textanalyse
+  \item rio - Datenimport
+  \item summarytools - Deskriptivstatistik
+  \item survey - Gewichtungen
+  \item tidyverse
 \end{itemize}
 
 \end{document}
