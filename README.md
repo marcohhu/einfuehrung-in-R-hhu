@@ -106,8 +106,14 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 [2.4 Lösung Hands-On: ]
 
 ## Acknowledgement
+Masch et al. (2021): [R - Ein Einführungsskript](https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=58006)
 
-[![](https://licensebuttons.net/l/by/3.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/).
+Introduction to R for Data Analysis (Johannes Breuer & Stefan Juenger, GESIS Summer School in Survey Methodology 2021): [GitHub Repository](https://github.com/jobreu/r-intro-gesis-2021)
+
+## CC
+<div align="center">
+
+<h4>Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</h4>
 
 <div style="width:300px; height:200px">
 
