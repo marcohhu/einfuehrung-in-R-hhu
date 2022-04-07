@@ -1,0 +1,27 @@
+---
+title: '2.2 Hands-On: Gewichtung'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung
+In der GLES sind Personen, die in Ostdeutschland leben, im Verhältnis zu den Bevölkerungsanteilen überdurchschnittlich repräsentiert (Oversampling). Um die Disproportionalität aufzuheben, beinhaltet der Datensatz ein Designgewicht. Das Designgewicht finden Sie in der Variablen „w_ow“. Nutzen Sie für die folgenden Aufgaben das R-Package „survey“
+
+## Aufgabe 1
+Importieren Sie die Daten der GLES zur Vor- und Nachwahlbefragung 2021. Zur Erinnerung: Im Datensatz sind sowohl die Vorwahl- als auch die Nachwahl-Daten. In der Variable "sample" ist die jeweilige Befragung gespeichert. Bitte bearbeiten Sie die Aufgaben nur mit Befragten aus der Nachwahl-Befragung. Filtern Sie demnach nach der Variable "sample" und speichern Sie die Befragten aus der Nachwahl-Befragung im neuen Dataframe "df_post" ab.
+
+## Aufgabe 2:
+Am Beispiel von zwei Variablen untersuchen Sie nun, ob sich die Mittelwerte zwischen gewichteten und ungewichteten Daten unterscheiden. Die erste Variable misst die subjektive Beurteilung der aktuellen wirtschaftlichen Lage (q23). Rekodieren Sie die Variable so um, das hohe Werte eine gute Beurteilung signalisieren. Achten Sie auf die fehlenden Werte.
+
+Die zweite Variable fragt nach der Verantwortung der Bundesregierung für die wirtschaftliche Entwicklung. Rekodieren Sie auch diese Variable um, sodass hohe Werte eine starke Verantwortung signalisieren.
+
+## Aufgabe 2:
+Auf der Grundlage der Nachwahl-Befragung und der Rekodierung, erstellen Sie nun mittels der Gewichtung (Variable: "w_ow") einen gewichteten Datensatz. 
+
+## Aufgabe 3: 
+Berechnen Sie nun das arithmetische Mittel mit den ungewichteten und den gewichteten Daten für die rekodierten Variablen zur aktuellen wirtschaftlichen Lage und zur Verantwortung der Bundesregierung. Unterscheiden sich die Mittelwerte zwischen gewichteten und ungewichteten Daten?
