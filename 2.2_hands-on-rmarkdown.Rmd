@@ -1,0 +1,27 @@
+---
+title: '2.2 Hands-On: R Markdown'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung
+
+## Aufgabe 1
+Erstellen Sie ein R Markdown File im Arbeitsverzeichnis des R Projects. Die Output-Datei soll das Format "HTML" haben. Geben Sie dem Dokument ein Titel, einen Untertitel und fügen Sie Ihren Namen als Autor*in ein.
+
+## Aufgabe 2 (Optional)
+Spezifizieren Sie nun die `knitr`code chunk Optionen, sodass alle Chunks im Dokument gleich interpretiert werden. Der Code in den chunks soll stets angezeigt werden, "messages" sollen nicht angezeigt werden. Hinweise zu den key-values finden Sie im entsprechenden Cheat Sheet. 
+
+## Aufgabe 3
+Importieren Sie nun die Daten aus ALLBUS 2018.
+
+## Aufgabe 4
+Wie hoch ist der Anteil der Befragten, die an vier oder mehr Tagen in der Woche TV gucken? Die entsprechende Variable lautet `lm01`. Rekodieren Sie hierzu eine Dummy-Variable, die den Wert 1 annimmt, wenn die Befragten an vier oder mehr Tagen Fernsehen schauen und den Wert 0 annimmt, wenn die Befragten weniger als vier Tage (auch "nie" oder "seltener") Fernsehen schauen. Erstellen Sie anschließend eine Häufigkeitstabelle mit absoluten, relativen und prozentualen Häufigkeiten. Optional: Vergeben Sie Labels für die entsprechenden Zeilen mit `row.names()`.
+
+## Aufgabe 5 (Optional)
+Erstellen Sie aus dem Dokument eine HTML-Datei.
