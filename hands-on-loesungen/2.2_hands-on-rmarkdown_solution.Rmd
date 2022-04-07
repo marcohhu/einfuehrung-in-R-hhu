@@ -1,0 +1,72 @@
+---
+title: '2.2 Hands-On: R Markdown'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung - Lösung
+
+## Aufgabe 1
+Erstellen Sie ein R Markdown File im Arbeitsverzeichnis des R Projects. Die Output-Datei soll das Format "HTML" haben. Geben Sie dem Dokument ein Titel, einen Untertitel und fügen Sie Ihren Namen als Autor*in ein.
+
+```{r, eval=FALSE}
+---
+title: "Titel des Dokuments"
+subtitle: "Der Untertitel des Dokuments"
+author: "Marco Waehner"
+date: "`r Sys.Date()`"
+output: 
+  html_document
+---
+```
+
+
+## Aufgabe 2 (Optional)
+Spezifizieren Sie nun die `knitr`code chunk Optionen, sodass alle Chunks im Dokument gleich interpretiert werden. Der Code in den chunks soll stets angezeigt werden, "messages" sollen nicht angezeigt werden. Hinweise zu den key-values finden Sie im entsprechenden Cheat Sheet 
+
+Lösung: {r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+
+## Aufgabe 3
+Importieren Sie nun die Daten aus ALLBUS 2018.
+
+```{r, message = FALSE}
+library(rio)
+```
+
+```{r}
+df <- import("data/allbus_2018_gesamt.sav")
+```
+
+## Aufgabe 4
+Wie hoch ist der Anteil der Befragten, die an vier oder mehr Tagen in der Woche TV gucken? Die entsprechende Variable lautet `lm01`. Rekodieren Sie hierzu eine Dummy-Variable, die den Wert 1 annimmt, wenn die Befragten an vier oder mehr Tagen Fernsehen schauen und den Wert 0 annimmt, wenn die Befragten weniger als vier Tage (auch "nie" oder "seltener") Fernsehen schauen. Erstellen Sie anschließend eine Häufigkeitstabelle mit absoluten, relativen und prozentualen Häufigkeiten. Optional: Vergeben Sie Labels für die entsprechenden Zeilen mit `row.names()`.
+```{r}
+attributes(df$lm01)
+#Häufigkeitsauszählung
+table(df$lm01)
+
+#recode dummy-variable
+df$tv <- ifelse(df$lm01 >= 4, 1,0)
+table(df$tv)
+
+#Häufigkeitstabelle
+absolut <- table(df$tv)
+relativ <- prop.table(absolut)
+prozentual <- 100 * relativ
+
+#optional auch kumuliert
+kumuliert <- cumsum(prozentual)
+
+haeufigkeiten <- cbind(absolut, relativ, prozentual, kumuliert)
+print(haeufigkeiten)
+
+row.names(haeufigkeiten) <- c("weniger/gleich 3 Tage", "mehr/gleich 4 Tage")
+
+print(haeufigkeiten)
+```
+
+
