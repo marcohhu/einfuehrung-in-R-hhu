@@ -33,13 +33,13 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 | Zeit          | Inhalt                             |
 |:--------------|:-----------------------------------|
-| 09:00 - 10:30 | **Datenvisualisierung II**    |
-| 10:30 - 10:45 | **Pause**                          |
-| 10:45 - 12:15 | **Inferenzstatistik II** |
-| 12:15 - 13:30 | **Pause**                          |
-| 13:30 - 15:00 | **Q&A**            |
-| 15:00 - 15:30 | **Pause**                          |
-| 15:30 - 17:00 | **Q&A**           |
+| 10:00 - 11:30 | **Datenvisualisierung II**    |
+| 11:30 - 11:45 | **Pause**                          |
+| 11:45 - 12:45 | **Inferenzstatistik II** |
+| 12:45 - 13:00 | **Pause**                          |
+| 13:00 - 14:30 | **Q&A**            |
+| 14:30 - 14:45 | **Pause**                          |
+| 14:45 - 15:45 | **Q&A**           |
 
 # Materialien zum Kurs
 
@@ -78,25 +78,23 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 ## Tag 2
 
 ### 2.1 Deskriptivstatistik I
-[Folien 2.1 Deskriptivstatistik I]
+[Folien 2.1 Deskriptivstatistik I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/2.1_deskriptivstatistik.pdf)
 
-[2.1 Hands-On: ]
+[2.1 Hands-On: Geburtskohorten](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.1_hands-on-age.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.1_hands-on-age_solution.pdf)
 
-[1.4 Lösung Hands-On: ]
+### 2.2 Deskriptivstatistik II
+[Folien 2.2 Deskriptivstatistik II I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/2.2_deskriptivstatistik_II.pdf)
 
-### 2.2 Datenvisualisierung I
-[Folien 2.2 Datenvisualisierung I]
+[2.2 Hands-On: R Markdown](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.2_hands-on-rmarkdown.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.2_hands-on-rmarkdown_solution.pdf)
 
-[2.2 Hands-On: ]
+[2.2 Hands-On: Gewichtung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.2_hands-on-weights.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.2_hands-on-weights_solution.pdf)
 
-[2.2 Lösung Hands-On: ]
+### 2.3 Datenvisualisierung I
+[Folien 2.3 Datenvisualisierung I]
 
-### 2.3 Deskriptivstatistik II
-[Folien 2.3 Deskriptivstatistik II]
+[2.3 Hands-On: ]
 
-[2.2 Hands-On: ]
-
-[2.2 Lösung Hands-On: ]
+[2.3 Lösung Hands-On: ]
 
 ### 2.4 Inferenzstatistik
 [Folien 2.4 Inferenzstatistik]
