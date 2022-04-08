@@ -1,0 +1,349 @@
+---
+bibliography: bib.bib
+---
+# Hintergrund: Lineare Regression
+
+```{r, echo = FALSE, warning= FALSE, message=FALSE}
+
+if (!require(scatterplot3d)) install.packages("scatterplot3d")
+
+#install.packages("scatterplot3d")
+library(haven)
+library(tidyverse)
+library(scatterplot3d)
+
+knitr::opts_chunk$set(fig.width=6, fig.height=6)
+
+```
+
+## Bivariate Lineare Regression
+Wir werden uns nun noch einmal intensiver damit auseinandersetzen, wie wir in einer linearen Regression Schätzwerte erhalten. Die Werte im Datensatz `df` wurden nicht in einer Umfrage erhoben, sondern von uns erstellt, um Zusammenhänge in den Daten besser darzustellen. Wir können uns aber vorstellen, dass X als unabhängige Variable für die Stunden steht, die wir für eine Klausur gelernt haben und Y als abhängige Variable unsere erreichte Punkteanzahl für diese Klausur repräsentiert. Insgesamt haben wir 50 Beobachtungen von 50 Befragten. Zum direkten [Download](https://uni-duesseldorf.sciebo.de/s/OUSGR7spOo3Yzj4) der Beispieldaten.
+
+```{r data, echo = FALSE}
+#random numbers
+#always set your seed
+set.seed(123)
+
+#predictor variables
+X <- runif(50, min = 0, max = 10)
+
+#error
+e <- rnorm(50,0,2)
+
+#outcome
+Y <-  0.5 + 2 * X + e
+
+#regression
+fit <- lm(Y ~ X)
+#summary(fit)
+
+predicted <- predict(fit)
+residual <- residuals(fit)
+
+df <- data.frame(y = Y, x = X, pred = predicted, res = residual)
+```
+
+```{r, echo=FALSE}
+head(df[1:2])
+```
+
+Zur Veranschaulichung der Daten sind die Beobachtungen auf der X- und Y-Achse eingetragen:
+
+```{r plot}
+ggplot(df, aes(x = x, y = y))+ #outcome variable on y-axis
+  geom_point(color = "darkblue")
+```
+
+Im Diagramm sehen wir, dass die Beobachtungswerte von links unten nach rechts oben steigen. Wir können deshalb sagen, dass je stärker X steigt, desto stärker steigt auch Y. Wir haben also einen *linearen Zusammenhang*. In unserem Beispiel würde die Punktzahl unserer Klausur umso stärker steigen, desto länger lernen. Ein linearer Zusammenhang ist eine Voraussetzung für die lineare Regression. Ob dieser Zusammenhang (und damit die Voraussetzung) besteht, können wir erst sehen, wenn wir eine Regression berechnet haben. Allerdings können wir den Zusammenhang zwischen zwei Variablen auch als Korrelation ausdrücken:
+```{r correlation}
+#Korrelation
+cor(X,Y)
+```
+
+Der Korrelationskoeffizient zeigt einen starken, positiven Zusammenhang. Dieser Zusammenhang ist allerdings ungerichtet, das heißt, wenn X steigt, dann steigt auch Y. Aber genauso gilt, wenn Y steigt, dann steigt auch X. Wenn wir uns nun die Regression anschauen, gehen wir beispielsweise davon aus, dass die Stunden, die wir in das Lernen für eine Klausur investieren, einen positiven Einfluss auf unsere Punkteanzahl ausübt. 
+
+Einen linearen (gerichteten) Zusammenhang zwischen zwei (metrischen) Variablen stellen wir formal dar:
+$$Y = \beta_{0} + \beta_{1} * X$$
+Dabei gilt:
+
+*$\beta_{0} =$ Interzept (engl. "Intercept")
+
+*$\beta_{1} =$ Steigung (engl. "Slope")
+
+In der linearen Regression wollen wir nun eine Regressionsgerade in das Streudiagramm einzeichnen, um die Beziehung zwischen X und Y auszudrücken. Mit dem Interzept $\beta_{0}$ erhalten wir den Punkt, an der die Gerade den Y-Achsenabschnitt schneidet. Und mit dem Slope $\beta_{1}$ die Steigung (dazu später mehr).
+
+```{r line}
+ggplot(df, aes(x = x, y = y)) + #outcome variable on y-axis
+  geom_point(color = "darkblue") +
+  geom_abline(intercept = 0.2153, slope = 2.0764)
+```
+
+Für jeden Wert $x_{i}$ erhalten wir dadurch einen theoretischen Vorhersagewert $\hat{y}$ für unsere abhängige Variable Y. Wenn X vollständig Y determiniert, stellen wir die Geradengleichung formal dar: 
+$$\hat{y} = \beta_{0} + \beta_{1} * x_{i}$$
+In der Praxis können wir aber nicht davon ausgehen, dass Y vollständig durch X determiniert (also perfekt vorhergesagt) wird. Wir müssen unsere Formel deshalb mit einem Fehler $e_{i}$ erweitern:
+$$\hat{y} = \beta_{0} + \beta_{1} * x_{i} + e_{i}$$
+Betrachten wir den Fehler $e_{i}$ einmal aus einer anderen Perspektive: In der ersten Abbildung haben wir die X- und Y-Werte in einem Diagramm eingetragen. In einem zweiten Schritt haben wir eine Regressionsgerade eingezeichnet. Wie wir diese Gerade gezeichnet haben, bleibt erstmal "mathematische Magie". Wir können nun aber die Gerade entlang gehen und erhalten für jeden Wert $x_{i}$ einen Vorhersagewert $\hat{y}$. Und jetzt kommt unser "Fehler" ins Spiel. Unsere empirische Beobachtung von Y weicht nämlich von unserer Schätzung ab. Das können wir in der Abbildung ganz gut erkennen, denn manchmal verläuft unsere Gerade durch die Beobachtungspunkte und manchmal weichen die Beobachtungspunkte von unserer Geraden ab. Die jeweilige Differenz zwischen Beobachtung und Vorhersage ist die *Residue* und die Residue ist der Fehler $e_{i}$. Deshalb gilt:
+$$e_{i} = y_{i} - \hat{y_{i}}$$
+Die Residuen können wir als eine vertikale Linie zwischen Beobachtungen und Regressionsgerade einzeichnen (in der Darstellung rot):
+
+```{r residuen}
+ggplot(df, aes(x = x, y = y)) + #outcome variable on y-axis
+  geom_point(color = "darkblue") +
+  geom_abline(intercept = 0.2153, slope = 2.0764) + 
+  geom_segment(aes(xend = x, yend = pred), color = "darkred")
+```
+
+Wir wissen bereits, dass das Interzept die Höhe angibt, an welcher Stelle die Gerade den Y-Achsenabschnitt schneidet und, dass die Steigung durch den Steigungskoeffizienten unserer Geraden angegeben wird. Die Regressionsgerade wurde aber nicht willkürlich in das Diagramm gezeichnet, sondern folgt der Annahme der bestmöglichen Anpassung (@Daiz-Bone2019). Dazu nutzen wir die *Methode der kleinsten Quadrate* (engl. "Ordinary least square" oder OLS-Methode) als Optimierungs- beziehungsweise Anpassungsstrategie. Uns interessiert insbesondere die Eigenschaft der OLS-Methode: Die Regressionsgerade in der Abbildung trägt nämlich die Eigenschaft, dass die Summe der quadrierten (!) Residuen minimiert wurde. Anders ausgedrückt: Wenn wir die Regressionsgerade anders einzeichnen oder verschieben, dann erhöht sich die Summe der quadrierten Residuen - was keiner Optimierung entsprechen würde. Wir können nun auch $\beta_{0}$ und $\beta_{1}$ bestimmen, aber diese Aufgabe überlassen wir zunächst unserem Rechner, indem wir die `lm()`-Funktion verwenden:
+```{r regression}
+#lineare Regression mit unseren Beispiel Daten
+model <- lm(y ~ x, data=df)
+summary(model)
+```
+
+Wir erhalten nun das Interzept  $\beta_{0}$ (häufig auch Konstante genannt) und die Steigung $\beta_{1}$ für $x_{i}$, die 2.07 beträgt und hochsignifikant ist (p < .001). Die Interpretation der Regressionskoeffizienten kennen wir bereits und wir können sagen, dass je stärker X steigt, desto stärker steigt auch Y. Für unser Beispiel lässt sich also sagen, je mehr Zeit zum Lernen investiert wird, desto höher ist die Punktezahl in der Klausur. 
+Wir können nun aber auch Vorhersagen für spezifische Merkmalsausprägungen unserer Beobachtungen treffen und beispielsweise schätzen, welche Punktzahl eine Person erzielt, wenn diese $x_{i}$ Stunden für die Klausur lernt. Wir ziehen dazu die Geradengleichung hinzu und setzen die Werte ein:
+$$\hat{y_{i}} = 0.21 + 2.07 * x_{i}$$
+Wenn wir nun den vorhergesagten Wert der abhängigen Variable herausfinden wollen, dann können wir einfach 2.07 mit dem x-Wert der zweiten Beobachtung multiplizieren. Dazu wird der x-Wert der zweiten Beobachtung im Datensatz ermittelt und in die Regressionsgleichung eingesetzt:
+
+```{r predict_1}
+#schätzung für die zweite Beobachtung
+0.21 + 2.07 * df$x[2]
+```
+R hat auch hierfür eine Funktion, damit wir die Schätzungen nicht händisch berechnen müssen. Die lineare Regression haben wir im vorherigen Beispiel im Objekt `model` gespeichert. Mit der `predict()`-Funktion erhalten wir die Vorhersagewerte. Auch dafür gucken wir uns die zweite Beobachtung an:
+
+```{r}
+#Schätzung zweite Beobachtung
+vorhersage <- predict(model)
+vorhersage[2]
+```
+Wir erhalten fast den exakt gleichen Wert, die Abweichung kommt zustande, weil wir im Gegensatz zu R mit nur zwei Nachkommastellen gerechnet haben. Aber wie "gut" ist unsere Vorhersage? Um die Frage zu beantworten, müssen wir uns die Residue für die zweite Beobachtung im Datensatz angucken. Dies geschieht mit der Funktion `residuals()`:
+
+```{r}
+#residuen
+residue <- residuals(model)
+residue[2]
+```
+Was passiert, wenn wir die Residue der zweiten Beobachtung mit der Vorhersage der zweiten Beobachtung addieren?
+
+```{r}
+# 16.58326 + 1.358417 
+vorhersage[2] + residue[2]
+```
+Wir erhalten unseren Beobachtungswert Y, das heißt, den tatsächlichen Wert von Y, so wie er im Datensatz für die zweite Beobachtung hinterlegt ist - keine Magie:
+```{r}
+#Beobachtungswert Y
+df$y[2]
+
+round(vorhersage[2] + residue[2]) == round(df$y[2])
+
+```
+
+Beobachtungswert, Erwartungswert und Residuen können in einer Tabelle angegeben werden:
+
+```{r}
+#fitted und fitted.values sind synonym
+out.bw <- df$y #Beobachtungswert
+out.ew <- model$fitted.values #Erwartungswert (yhat)
+out.r <- model$residuals #Residuen (uhat)
+
+out <- cbind(y = out.bw, yhat = out.ew, uhat = out.r)
+
+print(head(out))
+```
+
+Zum Schluss müssen wir uns nur noch damit auseinandersetzen, wie wir $\beta_{0}$ und $\beta_{1}$ unter Annahmen unserer Optimierungsstrategie bestimmen. Die Annahme führt u.a. dazu, dass die Summe der Resiuden 0 beträgt:
+
+```{r sum_res}
+#Summe der Residuen
+round(sum(model$residuals))
+```
+Dies kann auch durch die Spaltensumme auf der Basis der Tabelle gezeigt werden: 
+```{r}
+round(colSums(out), 2)
+```
+
+Achtung: Unsere Anpassungsstrategie lautet, dass die Summe der quadrierten Residuen minimiert wird. Aufgrund der Quadrierung, tragen aber große Residuen (starke Abweichungen), stärker zur Summe der Residuen $\sum{e_{i^2}}$ bei als kleine Residuen.
+
+Wir berechnen nun die Steigung $\beta_{1}$:
+
+$$\beta_{1} = \frac{cov(x;y)} {var(x)} = \frac{\frac{1}{n}\sum_{i}(x_{i}-\overline{x}) * (y_{i}-\overline{y})}{\frac{1}{n}\sum_{i}(x_{i}-\overline{x})^2}$$
+Und setzen demnach die Kovarianz $cov(x;y)$ und Varianz $var(x)$ in Beziehung zueinander. Beide Formeln kennen wir aus vorherigen Kapiteln. So können wir die Steigung direkt in R ermitteln:
+```{r b1}
+#steigung
+b1 <- cov(df$x,df$y)/var(df$x)
+b1
+#alternativ
+#cor(df$x, df$y)*(sd(df$y)/sd(df$x))
+```
+
+Mit $\beta_{1}$ berechnen wir schließlich die Konstante beziehungsweise das Interzept $\beta_{0}$:
+$$\beta_{0} = \overline{y}-\beta_{1}*\overline{x}$$
+In R geben wir ein:
+
+```{r b0}
+#konstante
+b0 <- mean(df$y)-b1*mean(df$x)
+b0
+```
+Wir können nun die notwendigen Schritte zur Berechnung eines gerichteten Zusammenhangs in R nachvollziehen und Regressionskoeffizienten berechnen. Durch diese Grundlagen, können Sie im späteren Verlauf auch die Anwendungsvoraussetzungen einen linearen Regression besser einschätzen. Dazu zählen insbesondere: Residuenanalyse, Linearität, Multikollinearität und die Varianzhomogenität (insbesondere @Diaz-Bone2019, S.202ff).
+
+Einige Eigenschaften der Residuen wurden bereits gezeigt. Eine Voraussetzung der linearen Regression ist die (annährungsweise) Normalverteilung der standardisierten Residuen:
+
+```{r}
+#Standardisierte Residuen
+hist(rstandard(model))
+```
+
+Ein weiterer Test ist der Plot von standardisierten Residuen und Erwartungswerten:
+
+```{r}
+std.resid <- rstandard(model)
+out.ew <- model$fitted.values #Erwartungswert (yhat)
+plot(y=std.resid, x=out.ew)
+abline(0,0)
+```
+Überprüfung der Korrelation der standardisierten Residuen:
+
+```{r}
+plot(std.resid)
+```
+
+## Bestimmtheitsmaß R-Quadrat
+Das Bestimmtheitsmaß (Synonym: Determinationskoeffizient) $R^2$ entspricht dem Anteil der erklärten Varianz des Regressionsmodells. Dabei kann $R^2$ Werte zwischen 0 und 1 annehmen. Grundsätzlich gilt, je höher der Anteil der erklärten Varianz, desto besser die Anpassung des Modells (Wolf & Best, 2010, S. 618). $R^2$ wird automatisch durch `summary()` berechnet (Multiple R-squared & Adjusted R-squared):
+
+```{r}
+summary(model)
+summary(model)$r.squared #R2
+```
+In der bivariaten Regression entspricht $R^2$ der quadrierten Korrelation zwischen x und y:
+
+```{r}
+out.cor <- cor(df$x, df$y)
+out.cor <- out.cor^2
+
+print(out.cor)
+```
+Der Anteil der erklärten Varianz beträgt 91,5 Prozent (100 * 0.951) und ist damit sehr hoch.
+
+Allgemein berechnet sich $R2$ wie folgt: 
+
+$$
+R^2 = \frac{Erklärte Streuung} {Gesamte Streuung} = \frac{SSR} {SST} = \frac{\sum_{(\hat{y_i} - \bar{y})^2}} {\sum_{(y_i - \bar{y_i})^2}}
+$$
+Sum of squares due to regression (SSR):
+
+```{r}
+ssr <- sum((fitted.values(model) - mean(df$y))^2)
+ssr
+```
+Sum of squares total (SST):
+
+```{r}
+sst <- sum((df$y - mean(df$y))^2)
+sst
+```
+Das Bestimmtheitsmaß wird durch Division berechnet:
+```{r}
+r2 <- ssr / sst
+r2
+```
+
+Der Output der linearen Regression kann über `summary()` angesteuert werden. In den Beispielen haben wir u.a. `$residuals`, `$fitted.values` und `$r.squared` gesehen. Einen Überblick zu allen Funktionen erhalten wir auf der Hilfe-Seite mittels `?summary.lm`.
+
+## Multiple Regression
+In der multiplen Regression nehmen wir zusätzliche erklärende Variablen in der Regression auf. In der formalen Darstellung finden wir natürlich auch den Fehlerterm E. Wir können nun aber einige Schritte, die wir bereits aus der bivariaten Regression kennen, überspringen und folgern: 
+$$\hat{y_{i}} = \beta_{0} + \beta_{1} * X_{1} + \beta_{2} * X_{2} + ... + \beta_{k} * X_{k} + E$$
+Für die multiple Regression wird das gleiche Verfahren zur Schätzung wie für die bivariate Regression angewandt, nämlich die optimale Minimierung der quadrierten Residuen (als Anpassungs- bzw. Optimierungsstrategie). Erneut suchen wir einen geschätzten Wert $\hat{y_{i}}$. Aufgrund der Mehrdimensionalität können wir ein Modell grafisch allerdings nur noch mit einer weiteren unabhängigen Variable darstellen, also dreidimensional. Auch hierfür haben wir Testdaten erzeugt. Zum direkten [Download](https://uni-duesseldorf.sciebo.de/s/6NYQmUFjbgvDwjL) der Daten. So könnten wir davon ausgehen, das die Punktezahl in einer Klausur nicht nur davon abhängt, wie viele Stunden zum Lernen investiert wird, sondern auch davon, wie viele Stunden die entsprechende Vorlesung besucht wurde. Wir gehen von einem positiven, gerichteten Zusammenhang aus und tragen die Beobachtungen in einen dreidimensionalen Raum ein:
+
+```{r, echo=FALSE}
+set.seed(123)
+
+x1 <- runif(50, min = 0, max = 10)
+x2 <- runif(50, min = 0, max = 10)
+e <- rnorm(50,0,2)
+y <-  0.5 + 2 * x1 + 1.5 * x2 + e
+
+df2 <- data.frame(y, x1, x2)
+
+```
+
+```{r}
+#Beispieldaten
+head(df2)
+```
+
+
+```{r, fig.width=6, fig.height=6}
+#Beobachtungen im dreidimensionalen Raum (Package: scatterplot3d)
+with(data = df2,
+     scatterplot3d(x = x1,
+                   y = x2,
+                   z = y,
+                   )
+     )
+```
+
+In unseren Daten können wir auch bei hinzunahme einer weiteren Variable von einem linearen Zusammenhang ausgehen. Die y-Werte steigen von links unten nach recht oben. Die Ermittlung der Regressionskoeffizienten ist allerdings nicht mehr so einfach wie in der bivariaten Regression. Deshalb schätzen wir die Koeffizienten direkt mit der `lm()`-Funktion und konzentrieren uns auf die Interpretation:
+
+```{r, echo=FALSE}
+#multiple Regression
+model_multi <- lm(y~x1 + x2, data=df2)
+summary(model_multi)
+
+```
+
+Die Konstante gibt uns nun den vorhergesagten Wert an, wenn alle unabhängigen Variablen den Wert 0 annehmen. Dies ist allerdings eine theoretische Vorhersage und interessiert uns weniger. Unsere unabhängigen Variablen X1 und X2 haben beide einen signifikanten (p < .001), positiven Einfluss auf die abhängige Variablen. Wir können also annehmen, dass je mehr wir lernen, und je häufiger wir eine Vorlesung besuchen, desto höher ist die Punkteanzahl in der Klausur. Hiernach tragen wir erneut unsere Regressionskoeffizienten in die Gleichung ein, um einen vorhergesagten Wert für spezifische Beobachtungen zu erhalten: 
+
+$$\hat{y_{i}} = 1.01 + 1.94 * x_{1} + 1.51 * x_{2}$$
+Wir gucken uns einmal die Ausprägungen von X1 und X2 unserer zweiten Beobachtung an:
+
+```{r}
+#zweite Beobachtung
+df2$x1[2]
+df2$x2[2]
+```
+Wie gewohnt, können wir mit R nun den Vorhersagewert erstellen, indem wir die Gleichung anwenden. Wir addieren X1 und X2, da beide einen positiven Einfluss auf Y ausüben:
+
+```{r predict_2}
+#schätzung für die zweite Beobachtung
+1.01 + 1.94 * df2$x1[2] + 1.51 * df2$x2[2]
+
+#alternativ
+#vorhersage <- predict(model_multi)
+#vorhersage[2]
+```
+Für die zweite Beobachtung mit x1=7.88 Stunden für die Vorbereitung der Klausur und x2=4.42 Stunden für den Besuch der Vorlesung, schätzen wir demnach 23 Punkte in der Klausur. 
+
+Im Anschluss wird die Modellgüte bestimmt. Da das $R^2$ die Eigenschaft hat zu steigen, wenn weitere unabhängige Variablen in das Modell aufgenommen werden, wird in einer multiplen Regression das korrigierte $R^2$ (engl. adjusted) betrachtet: 
+
+$$
+adj. R^2 = 1 - (1 - R^2) * \frac{n - 1}{n - p - 1}
+$$
+Das korrigierte R-Quadrat kann sinken, wenn weitere Variablen in das Modell aufgenommen werden. 
+
+Trotz methodischer Probleme wird das korrigierte $R^2$ häufig zwischen unterschiedlichen Modellen verglichen, um zu überprüfen, ob sich der Anteil der erklärten Varianz bei der Hinzunahme einer unabhängigen Variablen erhöht.
+
+```{r}
+#model mit 1 UV
+model_bivariat <- lm(y~x1, data=df2)
+summary(model_bivariat)$adj.r.squared
+
+#multiple Regression mit 2 UV
+model_multi <- lm(y~x1 + x2, data=df2)
+summary(model_multi)$adj.r.squared
+```
+In unserem Beispiel steigt das korrigierte R-Quadrat von 63 Prozent auf 94 Prozent stark an. Die Vorhersage des Modells verbessert sich nach der Hinzunahme einer weiteren Variablen substantiell.
+
+Das korrigierte $R^2$ kann durch Anwendung der Formel auch direkt in R berechnet werden. Für n = 50 und zwei unabhängigen
+Variablen gilt: 
+
+```{r}
+r2_multi <- summary(model_multi)$r.squared #wir benötigen R2 um das korrigierte R2 zu berechnen
+
+adj.R2 <- 1 - (49 / 47) * (1 - r2_multi)
+
+adj.R2
+```
+
+
+# Literatur

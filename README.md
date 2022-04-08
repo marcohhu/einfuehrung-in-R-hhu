@@ -95,20 +95,18 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 ### 2.4 Inferenzstatistik
 [Folien 2.4 Inferenzstatistik]
 
-[2.4 Hands-On: ]
-
-[2.4 Lösung Hands-On: ]
+[2.4 Hands-On: ] | [Lösung]
 
 
 ## Extracurricular
 
 [Ressourcensammlung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Ressourcen/ressourcen.pdf)
 
-[Set-Up File]
+[Set-Up File](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/extra/set_up.R)
 
-[Visualisierung Korrelation]
+[Visualisierung Korrelation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/extra/extra_correlation.pdf)
 
-[Funktion zur Korrelation]
+[Funktion zur Korrelation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/extra/how_to_cor.R)
 
 [Hintergrund zur Linearen Regression]
 
