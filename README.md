@@ -23,9 +23,9 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 |:--------------|:---------------------------|
 | 09:00 - 10:30 | **Deskriptivstatistik I**  |
 | 10:30 - 10:45 | **Pause**                  |
-| 10:45 - 12:15 | **Datenvisualisierung I**  |
+| 10:45 - 12:15 | **Deskriptivstatistik II** |
 | 12:15 - 13:30 | **Pause**                  |
-| 13:30 - 15:00 | **Deskriptivstatistik II** |
+| 13:30 - 15:00 | **Datenvisualisierung I** |
 | 15:00 - 15:30 | **Pause**                  |
 | 15:30 - 17:00 | **Inferenzstatistik I**    |
 
