@@ -47,8 +47,6 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [0.1 Installation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/0.1_installation.pdf)
 
-[Ressourcensammlung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Ressourcen/ressourcen.pdf)
-
 ## Tag 1
 
 ### 1.1 Einführung in R und RStudio
@@ -102,6 +100,19 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 [2.4 Hands-On: ]
 
 [2.4 Lösung Hands-On: ]
+
+
+## Extracurricular
+
+[Ressourcensammlung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Ressourcen/ressourcen.pdf)
+
+[Set-Up File]
+
+[Visualisierung Korrelation]
+
+[Funktion zur Korrelation]
+
+[Hintergrund zur Linearen Regression]
 
 ## Acknowledgement
 Masch et al. (2021): [R - Ein Einführungsskript](https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=58006)
