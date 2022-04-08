@@ -1,0 +1,81 @@
+---
+title: "Praxis: Korrelationen"
+author: "Marco Wähner"
+output:
+  pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(summarytools)
+library(ggplot2)
+library(faux)
+```
+
+
+```{r data, echo=FALSE, message=FALSE}
+dat <- rnorm_multi(n = 1000, 
+                   mu = c(0, 20, 20),
+                   sd = c(1, 5, 5),
+                   r = c(-0.5, 0, 0.5), 
+                   varnames = c("A", "B", "C"),
+                   empirical = FALSE)
+```
+
+Beispieldaten mit den Variablen A, B und C
+```{r}
+head(dat)
+```
+
+
+```{r, echo=FALSE}
+descr(dat, stats = c("mean", "sd"), transpose = TRUE)
+```
+
+Korrelation zwischen A und B: negativer Zusammenhang
+
+```{r, echo = FALSE}
+cor(dat$A, dat$B)
+```
+
+Visualisierung der Korrelation
+
+```{r, echo=FALSE, fig.width= 5, fig.height = 5}
+ggplot(dat, aes(x= A,
+                   y = B)) +
+  geom_point(position = "jitter", alpha = 0.3)
+```
+
+Korrelation zwischen A und C: kein Zusammenhang
+
+```{r, echo = FALSE}
+cor(dat$A, dat$C)
+```
+
+
+Visualisierung der Korrelation
+
+```{r, echo=FALSE, fig.width= 5, fig.height = 5}
+ggplot(dat, aes(x= A,
+                   y = C)) +
+  geom_point(position = "jitter", alpha = 0.3)
+```
+
+
+Korrelation zwischen B und C: positiver Zusammenhang
+
+```{r, echo = FALSE}
+cor(dat$B, dat$C)
+```
+
+
+Visualisierung der Korrelation
+
+```{r, echo=FALSE, fig.width= 5, fig.height = 5}
+ggplot(dat, aes(x= B,
+                   y = C)) +
+  geom_point(position = "jitter", alpha = 0.3)
+```
