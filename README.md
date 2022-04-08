@@ -108,7 +108,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [Funktion zur Korrelation](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/extra/how_to_cor.R)
 
-[Hintergrund zur Linearen Regression]
+[Hintergrund zur Linearen Regression](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/extra/13_Hintergrund_LineareRegression.html)
 
 ## Acknowledgement
 Masch et al. (2021): [R - Ein Einführungsskript](https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=58006)
