@@ -93,7 +93,7 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 [2.3 Hands-On: Voting](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.3_hands-on-voting.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.3_hands-on-voting_solution.pdf)
 
 ### 2.4 Inferenzstatistik
-[Folien 2.4 Inferenzstatistik]
+[Folien 2.4 Inferenzstatistik](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/2.4_lineare_regression.pdf)
 
 [2.4 Hands-On: ] | [Lösung]
 
