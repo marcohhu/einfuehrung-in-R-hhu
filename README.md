@@ -88,11 +88,9 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 [2.2 Hands-On: Gewichtung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.2_hands-on-weights.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.2_hands-on-weights_solution.pdf)
 
 ### 2.3 Datenvisualisierung I
-[Folien 2.3 Datenvisualisierung I]
+[Folien 2.3 Datenvisualisierung I](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Folien/2.3_datenvisualisierung.pdf)
 
-[2.3 Hands-On: ]
-
-[2.3 Lösung Hands-On: ]
+[2.3 Hands-On: Voting](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/2.3_hands-on-voting.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/2.3_hands-on-voting_solution.pdf)
 
 ### 2.4 Inferenzstatistik
 [Folien 2.4 Inferenzstatistik]
