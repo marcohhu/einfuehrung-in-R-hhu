@@ -1,0 +1,77 @@
+---
+title: '2.x Hands-On: R Markdown'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung
+Erstellen Sie einen Plot zur "Sonntagsfrage" Variable (pv01).
+
+
+## Aufgabe 1
+Importieren Sie die Daten aus dem ALLBUS 2018 und aktivieren Sie die notwendigen Packages
+
+```{r, message = FALSE}
+library(rio)
+library(tidyverse)
+```
+
+```{r}
+df <- import("data/allbus_2018_gesamt.sav")
+```
+
+## Aufgabe 2
+Kopieren Sie die Variable zur Sonntagsfrage in die neue Variable `vote`. Nicht-Wähler*innen erhalten ein Missing Value. Die Werte der ursprünglichen Variable sollen rekodiert werden in die Namen der Parteien (1 = Union, 2 = SPD etc.). Die neue Variable hat anschließend die Klasse `factor`.
+
+```{r}
+#copy
+df$vote <- df$pv01
+
+df$vote[df$vote %in% c(91)] <- NA
+
+#recode
+df$vote[df$vote == 1] <- "Union"
+df$vote[df$vote == 2] <- "SPD"
+df$vote[df$vote == 3] <- "FDP"
+df$vote[df$vote == 4] <- "Gruene"
+df$vote[df$vote == 6] <- "Linke"
+df$vote[df$vote == 42] <- "AFD"
+df$vote[df$vote == 90] <- "Sonstige"
+
+df$vote <- factor(df$vote, levels = c("Union","SPD", "FDP", "Gruene", "Linke", "AFD", "Sonstige"))
+
+table(df$vote, useNA = "ifany")
+```
+
+
+#Aufgabe 3
+* Erstellen Sie eine Häufigkeitsauszählung (absolut) mittels `barplot`. Es sollen keine Missing Values geplottet werden. Dies kann mit dem Befehl `drop_na(vote)` vor dem `ggplot`-Befehl unterdrückt werden.
+
+```{r}
+df %>% drop_na(vote) %>% ggplot(aes(x = vote)) +
+  geom_bar()
+```
+
+* Erstellen Sie eine prozentuale Häufigkeitsauszählung  mittels `barplot`. Es sollen keine Missing Values geplottet werden. 
+
+```{r}
+df %>% drop_na(vote) %>% ggplot(aes(x = vote)) +
+  geom_bar(aes(y = 100 * (..count..)/sum(..count..)))
+```
+
+* Erstellen Sie eine prozentuale Häufigkeitsauszählung  mittels `barplot` getrennt für Ost- und Westdeutschland. Es sollen keine Missing Values geplottet werden. 
+
+```{r}
+df %>% drop_na(vote) %>% ggplot(aes(x = vote, fill = factor(eastwest))) +
+  geom_bar(aes(y = 100 * (..count..)/sum(..count..)), position = "dodge")
+```
+
+## Aufgabe 4
+Wählen Sie einen Plot aus verändern Sie die Beschriftung und Darstellung, sodass der Plot abgedruckt werden könnte. Finden Sie eine Möglichkeit den Plot zu speichern/ zu exportieren.
+
+
