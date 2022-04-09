@@ -1,0 +1,47 @@
+---
+title: '3.1 Hands-On: ggplot II'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung - Lösung
+Untersuchen Sie, ob sich im Mittel die Wahlbeteiligungsabsicht zwischen Befragten in Ost- und Westdeutschland unterscheidet. Arbeiten Sie dazu die folgenden Aufgaben durch.
+
+
+## Aufgabe 1
+Importieren Sie nun die Daten aus der GLES 2021.
+
+Im Datensatz sind sowohl die Vorwahl- als auch die Nachwahl-Daten. In der Variable "sample" ist die jeweilige Befragung gespeichert. Filtern Sie nun nach der Variable "sample" und speichern Sie die Befragten aus der Vorwahl-Befragung im neuen Dataframe "df_pre" ab. Arbeiten Sie bitte nun mit den Daten der Vorwahl-Befragung.
+
+
+## Aufgabe 2
+Rekodieren Sie die Variable „ostwest“ in 0 „Ostdeutschland“ und 1 „Westdeutschland“ um. Die neue Variable soll die Klasse `factor` haben.
+
+## Aufgabe 3
+Rekodieren Sie die Variable zur Wahlbeteiligungsabsicht (q6) um, sodass hohe Werte eine hohe Wahlbeteiligungsabsicht signalisieren. Vergeben Sie einen neuen Namen für die rekodierte Variable.
+
+* „bestimmt zur Wahl gehen“ erhält den Wert 5
+
+* „wahrscheinlich zur Wahl gehen“ erhält den Wert 4
+
+* „vielleicht zur Wahl gehen“ erhält den Wert 3
+
+* „wahrscheinlich nicht zur Wahl gehen“ erhält den Wert 2
+
+* „bestimmt nicht zur Wahl gehen“ erhält den Wert 1
+
+* alle weiteren Ausprägungen erhalten ein Missing Value
+
+Die neue Variable soll die Klasse „numeric“ haben. Geben Sie nun eine Häufigkeitsauszählung inklusive der fehlenden Werte aus.
+
+## Aufgabe 4
+Berechnen Sie den Mittelwert zur Wahlabsicht getrennt für Ost- und Westdeutschland.
+
+## Aufgabe 5 
+Plotten Sie die Mittelwerte und Standardabweichung zur Wahlabsicht für Ost- und Westdeutschland. Beschriften Sie die X- und Y-Achse sinnvoll. Fügen Sie einen entsprechenden Titel für Ihre Grafik ein. Eine Grafik können Sie mit einem Klick auf „Export“ und der Wahl eines Formats speichern. Können Sie einen Weg finden, um den Plot per Code zu speichern? Suchen Sie in den Skripten oder im Internet nach einer entsprechenden Lösung.
+

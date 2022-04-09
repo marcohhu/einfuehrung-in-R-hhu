@@ -1,0 +1,58 @@
+---
+title: '3.1 Hands-On: ggplot'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung
+
+
+## Aufgabe 1
+Importieren Sie die Daten aus dem ALLBUS 2018.
+
+## Aufgabe 2
+Folgende Variablen erheben die Mitgliedschaft(en) der Befragten in (zivilgesellschaftlichen) Organisationen
+
+* sm04 - MITGLIEDSSTATUS: KULTURVEREIN
+
+* sm05 - MITGLIEDSSTATUS: SPORTVEREIN
+
+* sm06 - MITGLIEDSSTATUS: SONST. HOBBYVEREIN
+
+* sm07 - MITGLIEDSSTATUS: WOHLTAETIGKEITSVEREIN
+
+* sm08 - MITGLIEDSSTATUS: MENSCHENRECHTSORGAN
+
+* sm09 - MITGLIEDSSTATUS: NATURSCHUTZORGANISATION
+
+* sm10 - MITGLIEDSSTATUS: GESUNDHEITSVEREIN
+
+* sm11 - MITGLIEDSSTATUS: ELTERNORGANISATION
+
+* sm12 - MITGLIEDSSTATUS: SENIORENVEREIN
+
+* sm13 - MITGLIEDSSTATUS: BUERGERINITIATIVE
+
+* sm14 - MITGLIEDSSTATUS: ANDERE VEREINE
+
+Lassen Sie sich zunächst die Eigenschaften der Variablen anzeigen.
+
+Im Anschluss eine Häufigkeitsauszählung (inklusive Missing Values) jeder Variablen.
+
+## Aufgabe 3
+Rekodieren Sie die Variablen in Dummy-Variablen mit der Ausprägung 0 (keine Mitgliedschaft) und 1 (passives Mitglied, aktives Mitglied, Ehrenamt)
+
+## Aufgabe 4
+Erstellen Sie nun einen additiven Index, der auszählt, in wie vielen Organisationen die Befragten eine Mitgliedschaft haben. Geben Sie die absolute und prozentuale Häufigkeit aus
+
+## Aufgabe 5
+Erstellen Sie nun eine passende Grafik, die einen Überblick über die Häufigkeit der Mitgliedschaften anbietet. Falls es sinnvoll erscheint, fassen Sie die Ausprägungen nochmals zusammen (beispielsweise die Ausprägungen 5 - 12). Dabei kann es hilfreich sein, die neue Variable als `factor` mit entsprechenden `levels`zu speichern.
+Hinweis: Wenn Sie mit einem `factor` arbeiten, dann kann es sein, dass zusätzlich die Missing Values in die Graphik aufgenommen werden. Um das zu verhindern, können Sie einfach die Funktion `drop.na(variable)` nutzen.
+
+## Aufgabe 6
+Es erscheint nicht sinnvoll alle möglichen Mitgliedschaften zu plotten. Rekodieren Sie die Variable und fassen Sie Befragte mit gleich/mehr als fünf Mitgliedschaften in einer Kategorie zusammen. Auch die neue Variable soll die Klasse `factor` haben. Erstellen Sie anschließend einen Plot mit entsprechender Beschriftung.

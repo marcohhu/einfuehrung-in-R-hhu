@@ -1,0 +1,142 @@
+---
+title: '3.1 Hands-On: ggplot'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung - Lösung
+
+
+
+## Aufgabe 1
+Importieren Sie die Daten aus dem ALLBUS 2018.
+
+```{r, message = FALSE}
+library(rio)
+```
+
+```{r}
+df <- import("data/allbus_2018_gesamt.sav")
+```
+
+## Aufgabe 2
+Folgende Variablen erheben die Mitgliedschaft(en) der Befragten in (zivilgesellschaftlichen) Organisationen
+
+* sm04 - MITGLIEDSSTATUS: KULTURVEREIN
+
+* sm05 - MITGLIEDSSTATUS: SPORTVEREIN
+
+* sm06 - MITGLIEDSSTATUS: SONST. HOBBYVEREIN
+
+* sm07 - MITGLIEDSSTATUS: WOHLTAETIGKEITSVEREIN
+
+* sm08 - MITGLIEDSSTATUS: MENSCHENRECHTSORGAN
+
+* sm09 - MITGLIEDSSTATUS: NATURSCHUTZORGANISATION
+
+* sm10 - MITGLIEDSSTATUS: GESUNDHEITSVEREIN
+
+* sm11 - MITGLIEDSSTATUS: ELTERNORGANISATION
+
+* sm12 - MITGLIEDSSTATUS: SENIORENVEREIN
+
+* sm13 - MITGLIEDSSTATUS: BUERGERINITIATIVE
+
+* sm14 - MITGLIEDSSTATUS: ANDERE VEREINE
+
+Lassen Sie sich zunächst die Eigenschaften der Variablen anzeigen.
+
+```{r}
+orga <- c("sm04", "sm05", "sm06", "sm07", "sm08", "sm09", "sm10", "sm11", "sm12", "sm13", "sm14")
+
+lapply(df[, c(orga)], function(x) attr(x, "label"))
+lapply(df[, c(orga)], function(x) attr(x, "labels"))
+```
+
+Im Anschluss eine Häufigkeitsauszählung (inklusive Missing Values) jeder Variablen.
+```{r}
+lapply(df[, c(orga)], function(x) table(x, useNA = "ifany"))
+```
+## Aufgabe 3
+Rekodieren Sie die Variablen in Dummy-Variablen mit der Ausprägung 0 (keine Mitgliedschaft) und 1 (passives Mitglied, aktives Mitglied, Ehrenamt)
+
+```{r}
+#Rekodierung
+df$sm04_d <- ifelse(df$sm04 == 1, 0, 1)
+df$sm05_d <- ifelse(df$sm05 == 1, 0, 1)
+df$sm06_d <- ifelse(df$sm06 == 1, 0, 1)
+df$sm07_d <- ifelse(df$sm07 == 1, 0, 1)
+df$sm08_d <- ifelse(df$sm08 == 1, 0, 1)
+df$sm09_d <- ifelse(df$sm09 == 1, 0, 1)
+df$sm10_d <- ifelse(df$sm10 == 1, 0, 1)
+df$sm11_d <- ifelse(df$sm11 == 1, 0, 1)
+df$sm12_d <- ifelse(df$sm12 == 1, 0, 1)
+df$sm13_d <- ifelse(df$sm13 == 1, 0, 1)
+df$sm14_d <- ifelse(df$sm14 == 1, 0, 1)
+```
+
+```{r}
+orga_d <- c("sm04_d", "sm05_d", "sm06_d", "sm07_d", "sm08_d", "sm09_d", "sm10_d", "sm11_d", "sm12_d", "sm13_d", "sm14_d")
+lapply(df[, c(orga_d)], function(x) table(x, useNA = "ifany"))
+```
+
+## Aufgabe 4
+Erstellen Sie nun einen additiven Index, der auszählt, in wie vielen Organisationen die Befragten eine Mitgliedschaft haben. Geben Sie die absolute und prozentuale Häufigkeit aus
+
+```{r}
+#index
+df$orga_index <- rowSums(df[, c(orga_d)])
+```
+
+```{r}
+table(df$orga_index)
+100*prop.table(table(df$orga_index))
+```
+
+## Aufgabe 5
+Erstellen Sie nun eine passende Grafik, die einen Überblick über die Häufigkeit der Mitgliedschaften anbietet. Falls es sinnvoll erscheint, fassen Sie die Ausprägungen nochmals zusammen (beispielsweise die Ausprägungen 5 - 12). Dabei kann es hilfreich sein, die neue Variable als `factor` mit entsprechenden `levels`zu speichern.
+Hinweis: Wenn Sie mit einem `factor` arbeiten, dann kann es sein, dass zusätzlich die Missing Values in die Graphik aufgenommen werden. Um das zu verhindern, können Sie einfach die Funktion `drop.na(variable)` nutzen.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+df %>% ggplot(aes(x=orga_index)) +
+  geom_bar()
+
+```
+
+## Aufgabe 6
+Es erscheint nicht sinnvoll alle möglichen Mitgliedschaften zu plotten. Rekodieren Sie die Variable und fassen Sie Befragte mit gleich/mehr als fünf Mitgliedschaften in einer Kategorie zusammen. Auch die neue Variable soll die Klasse `factor` haben. Erstellen Sie anschließend einen Plot mit entsprechender Beschriftung.
+
+```{r}
+#5 bis 12 zusammenfassen
+df$orga_index[df$orga_index == 0] <- "keine Mitgliedschaft"
+df$orga_index[df$orga_index == 1] <- "1"
+df$orga_index[df$orga_index == 2] <- "2"
+df$orga_index[df$orga_index == 3] <- "3"
+df$orga_index[df$orga_index == 4] <- "4"
+df$orga_index[df$orga_index %in% c(5:14)] <- ">5 Mitgliedschaften"
+```
+
+```{r}
+orga_level <- c("keine Mitgliedschaft", "1", "2", "3", "4", ">5 Mitgliedschaften")
+df$orga_index <- factor(df$orga_index, levels = orga_level)
+```
+
+```{r}
+class(df$orga_index)
+```
+
+```{r}
+table(df$orga_index)
+```
+
+```{r}
+df %>% drop_na(orga_index) %>% ggplot(aes(x=orga_index)) +
+  geom_bar()
+```
+
