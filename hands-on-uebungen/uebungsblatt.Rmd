@@ -1,0 +1,37 @@
+---
+title: 'Übungsblatt'
+author: "Marco Wähner"
+date: '2022-03-25'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Aufgabenstellung
+Untersuchen Sie, ob sich im Mittel die Wahlbeteiligungsabsicht zwischen Befragten in Ost- und Westdeutschland unterscheidet. Arbeiten Sie dazu die folgenden Aufgaben durch. Den Code können Sie entweder in einem Skript oder in einem R Markdown-File schreiben.
+
+
+## Aufgabe 1
+Importieren Sie nun die Daten aus der GLES 2021. Wir die Aufgaben benötigen Sie die Daten der Nachwahl-Befragung.
+
+## Aufgabe 2
+
+Die GLES erhebt sechs Variablen zu populistischen Einstellungen (q51a – q51f).
+
+* Rekodieren Sie die Variablen q66a bis q66f zu populistischen Einstellungen um, sodass ein hoher Wert eine hohe Zustimmung zu populistischen Aussagen signalisiert.
+
+* Testen Sie die Reliabilität des theoretischen Konstrukts der populistischen Einstellungen. Achtung: Verwenden Sie die rekodierten Items, sodass höhere Werte eine höhere Zustimmung zu populistischen Aussagen signalisieren. Interpretieren Sie Cronbachs Alpha. Würde sich die Messgenauigkeit verbessern, wenn Sie ein Item weglassen? Treffen Sie eine Entscheidung und bilden Sie einen Mittelwertindex zu populistischen Einstellungen.
+
+* Erstellen Sie einen Mittelwertindex, der populistische Einstellungen der Befragten misst. Kommentieren Sie im Code den Mittelwert und die Standardabweichung sowie die fehlenden Werte (Missing Values).
+
+## Aufgabe 3
+Wie können Sie populistische Einstellungen erklären? Untersuchen Sie den Einfluss von Demokratiezufriedenheit (q4) und allgemeines Vertrauen (q78) auf populistische Einstellungen (Index aus Aufgabe 2) unter Kontrolle des Alters (d2a) und des Geschlechts (d1). Dafür überprüfen Sie folgende Hypothesen: H1 Je höher die Zufriedenheit mit der Demokratie, desto niedriger die Zustimmung zu populistischen Aussagen. H2 Je höher das allgemeine Vertrauen, desto niedriger die Zustimmung zu populistischen Aussagen.
+Hinweis: Die Variable zur Demokratiezufriedenheit sollte ebenfalls rekodiert werden, damit ein hoher Wert eine hohe Zufriedenheit signalisiert. Die spätere Interpretation ist dann einfacher. Die Variable zum allgemeinen Vertrauen muss nicht rekodiert werden. Die Variable zum Alter  enthält nur die Angabe zum Geburtsjahr der Befragten. Wenn Sie das Erhebungsjahr der GLES (2021) vom Geburtsjahr abziehen, erhalten Sie das Alter der Befragten, zum Beispiel: `df$age <- 2021 - df$d2a`. Das Geschlecht sollte als Dummy-Variable rekodiert werden.
+
+* Berechnen Sie die bivariate Korrelation zwischen populistischen Einstellungen und den jeweiligen unabhängigen Variablen (Demokratiezufriedenheit und allgemeines Vertrauen). Interpretieren Sie die Korrelationskoeffizienten und ihre Signifikanz.
+
+* Berechnen Sie nun schrittweise eine multiple lineare Regression auf Ihren Index zu populistischen Einstellungen mit den Variablen Demokratiezufriedenheit (rekodiert) und allgemeines Vertrauen unter Kontrolle von Alter und Geschlecht. Interpretieren Sie die Modellgüte sowie die Koeffizienten der unabhängigen Variablen und ihre Signifikanz.
+
+* Welche Hypothesen können Sie nun vorläufig bestätigen beziehungsweise verwerfen?
