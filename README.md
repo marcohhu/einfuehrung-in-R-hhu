@@ -103,6 +103,8 @@ Zusatzmaterialen zum Einführungskurs in die Datenanalyse mit R. Am einfachsten 
 
 [3.1 Hands-On: ggplot II](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/3.1_hands-on-voting.pdf) | [Lösung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-loesungen/3.1_hands-on-voting_solution.pdf)
 
+[Übungsblatt](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/hands-on-uebungen/uebungsblatt.pdf)
+
 ## Extracurricular
 
 [Ressourcensammlung](https://github.com/marcohhu/einfuehrung-in-R-hhu/blob/main/Ressourcen/ressourcen.pdf)
